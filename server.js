@@ -7,5 +7,8 @@ export const app = express()
 
 app.use(express.json())
 
+const versioning = "/api/v1"
+
 connectToDatabase()
-app.use('/tickets', ticketRoutes)
+
+app.use(versioning + '/tickets', ticketRoutes)
